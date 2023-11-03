@@ -1,2 +1,1 @@
-# golangdemo1
-qq
+# golangdemo
