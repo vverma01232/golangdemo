@@ -56,6 +56,6 @@ func GetRepoCollection(collectionName string) repository.Repository {
 
 // GetCollection function helps in getting database collections
 func GetCollection(client *mongo.Client, collectionName string) *mongo.Collection {
-	collection := client.Database("Initializ").Collection(collectionName)
+	collection := client.Database("Initializ-dev").Collection(collectionName)
 	return collection
 }

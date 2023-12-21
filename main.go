@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"golangdemo/config"
 	"html/template"
 	"log"
@@ -142,6 +143,7 @@ func main() {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
 			}
+			fmt.Println(result)
 			results = append(results, result)
 		}
 
