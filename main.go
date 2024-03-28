@@ -19,7 +19,7 @@ type PageData struct {
 func main() {
 	config.LoadEnv()
 	config.ConnectDB()
-	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/initializ/v1/home", func(w http.ResponseWriter, r *http.Request) {
 		var redirectURI string
 		values := r.URL.Query()
 		state := values.Get("state")
@@ -123,7 +123,7 @@ func main() {
 
 		tmpl.Execute(w, data)
 	})
-	http.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/initializ/v1/users", func(w http.ResponseWriter, r *http.Request) {
 		userrepo := config.GetCollection(config.DB, "User")
 		filter := make(map[string]interface{})
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
